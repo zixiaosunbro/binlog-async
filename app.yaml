@@ -1,0 +1,29 @@
+plugins:
+  db: true
+  redis: true
+
+redis:
+  uri: 127.0.0.1:6379
+  connect_timeout: 500ms
+  read_timeout: 500ms
+  write_timeout: 500ms
+  pool_max_active: 20
+  max_retries: 3
+  db: 0
+
+mysql:
+  dsn: "root:123456@tcp(127.0.0.1:3306)/test"
+  max_lifetime: 5m
+  max_open_conns: 20
+  max_idle_conns: 20
+  autocommit: false
+
+canal:
+  addr: 127.0.0.1:3306
+  user: root
+  password: 123456
+  flavor: mysql
+  db: test
+  table:
+    - user_info
+  server_id: 1001
